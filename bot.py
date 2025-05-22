@@ -35,7 +35,7 @@ def start(update, context):
 
     context.bot.send_message(
         chat_id=telegram_id,
-        text="Olá! Welcome!\n\nPor favor selecione seu país / Please select your country:",
+        text="Olá! Welcome!\n\nPor favor selecione seu país meu amor / Please select your country, sweetie:",
         reply_markup=reply_markup
     )
 
@@ -47,16 +47,14 @@ def responder_pais(update, context):
 
     if pais == 'BR':
         query.message.reply_text(
-            "Você selecionou *Brasil*.\n\n"
-            "O acesso ao canal VIP custa R$25.\n\n"
+            "O acesso ao canal meu canal VIP custa R$25.\n\n"
             f"Realize o pagamento via Pix usando a chave abaixo:\n\n{PIX_INSTRUCAO}\n\n"
             "Após o pagamento, envie o comprovante aqui mesmo para liberar o acesso.",
             parse_mode="Markdown"
         )
     elif pais == 'US':
         query.message.reply_text(
-            "You selected *United States*.\n\n"
-            "Access costs **$6,99 USD**.\n\n"
+            "Access costs **$6.99 USD**.\n\n"
             "Click below to pay securely with Stripe:",
             parse_mode="Markdown"
         )
@@ -88,6 +86,11 @@ def stripe_webhook():
         return "Erro", 400
 
     return "OK", 200
+
+# ========== ROTA DE PING ==========
+@app.route("/", methods=["GET", "HEAD"])
+def health_check():
+    return "Bot ativo!", 200
 
 # ========== INICIALIZAÇÃO ==========
 def iniciar_bot():
