@@ -6,7 +6,7 @@ import stripe
 import os
 
 # ========== CONFIGURAÇÕES ==========
-BOT_TOKEN = '7498102918:AAGqCrViMjcItEIAAfhBRdLwSbrPHenLI54'
+BOT_TOKEN = '7689566074:AAHuRa5oikd0MHFkiVovlNVFC0XhLQ2QZb8'
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 STRIPE_PAYMENT_LINK = os.getenv("STRIPE_PAYMENT_LINK")  # Ex: https://buy.stripe.com/test_xxx
